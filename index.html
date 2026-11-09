@@ -29,14 +29,59 @@
         <p>Elige tu modelo y tu talla, y haz tu pedido por WhatsApp. Te confirmamos el stock al instante.</p>
       </section>
 
+      <div class="catalogo">
+      <form id="filtros" class="filtros" role="search" aria-label="Filtrar productos">
+        <div class="campo">
+          <label for="f-texto">Buscar</label>
+          <input id="f-texto" name="texto" type="search" placeholder="Modelo, marca o color" autocomplete="off">
+        </div>
+
+        <div class="campo">
+          <label for="f-categoria">Categoría</label>
+          <select id="f-categoria" name="categoria">
+            <option value="">Todas</option>
+          </select>
+        </div>
+
+        <fieldset class="campo">
+          <legend>Para</legend>
+          <div class="opciones">
+            <label class="chip"><input type="radio" name="genero" value="" checked> <span>Todos</span></label>
+            <label class="chip"><input type="radio" name="genero" value="mujer"> <span>Mujer</span></label>
+            <label class="chip"><input type="radio" name="genero" value="hombre"> <span>Hombre</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="campo">
+          <legend>Talla</legend>
+          <div id="f-tallas" class="opciones opciones--tallas"></div>
+        </fieldset>
+
+        <div class="campo">
+          <label for="f-orden">Ordenar por</label>
+          <select id="f-orden" name="orden"></select>
+        </div>
+
+        <div class="filtros__acciones">
+          <button type="submit" class="boton solo-sin-js">Aplicar filtros</button>
+          <button type="reset" class="boton boton--secundario">Limpiar filtros</button>
+        </div>
+      </form>
+
       <section aria-labelledby="titulo-productos">
         <div class="resultados">
           <h2 id="titulo-productos">Productos</h2>
           <p id="contador" class="resultados__contador" aria-live="polite"></p>
         </div>
         <ul id="grilla" class="grilla"></ul>
+        <div id="vacio" class="aviso" hidden>
+          <p><strong>No encontramos modelos con esos filtros.</strong></p>
+          <p>Prueba con otra talla o categoría, o escríbenos por WhatsApp y te avisamos cuando llegue.</p>
+          <button type="button" id="limpiar-vacio" class="boton">Ver todo el catálogo</button>
+        </div>
         <noscript><p class="aviso">Activa JavaScript para ver el catálogo.</p></noscript>
       </section>
+      </div>
     </main>
 
     <footer class="pie">

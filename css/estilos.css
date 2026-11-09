@@ -188,3 +188,81 @@ img { max-width: 100%; display: block; }
 @media (prefers-reduced-motion: reduce) {
   * { scroll-behavior: auto !important; transition: none !important; }
 }
+
+/* Filtros */
+.catalogo { display: grid; gap: 8px; }
+
+.filtros {
+  display: grid;
+  gap: 16px;
+  padding: 16px;
+  background: var(--color-superficie);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+  align-self: start;
+}
+.campo { display: grid; gap: 6px; margin: 0; padding: 0; border: 0; min-width: 0; }
+.campo label,
+.campo legend { font-weight: 700; font-size: .9rem; padding: 0; }
+.campo legend { margin-bottom: 6px; }
+
+input[type="search"],
+select {
+  width: 100%;
+  min-height: 44px;
+  padding: 8px 12px;
+  font: inherit;
+  color: inherit;
+  background: var(--color-fondo);
+  border: 1px solid var(--color-borde);
+  border-radius: 8px;
+}
+
+.opciones { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { position: relative; cursor: pointer; }
+.chip input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.chip span {
+  display: inline-grid;
+  place-items: center;
+  min-width: 44px;
+  min-height: 40px;
+  padding: 6px 12px;
+  border: 1px solid var(--color-borde);
+  border-radius: 999px;
+  background: var(--color-fondo);
+  font-size: .9rem;
+}
+.chip input:checked + span {
+  background: var(--color-texto);
+  border-color: var(--color-texto);
+  color: #fff;
+  font-weight: 700;
+}
+.chip input:focus-visible + span { outline: 3px solid var(--color-acento); outline-offset: 2px; }
+
+.boton {
+  min-height: 44px;
+  padding: 10px 16px;
+  font: inherit;
+  font-weight: 700;
+  color: #fff;
+  background: var(--color-acento);
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.boton--secundario {
+  color: var(--color-texto);
+  background: transparent;
+  border: 1px solid var(--color-borde);
+}
+.aviso p { margin: 0 0 8px; }
+
+@media (min-width: 900px) {
+  .catalogo { grid-template-columns: 260px 1fr; gap: 24px; align-items: start; }
+  .filtros { position: sticky; top: 80px; margin-top: 24px; max-height: calc(100vh - 96px); overflow-y: auto; }
+  .grilla { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+}
+.filtros__acciones { display: flex; gap: 8px; flex-wrap: wrap; }
+/* Con JavaScript los filtros se aplican al instante y el botón sobra. */
+.js .solo-sin-js { display: none; }
