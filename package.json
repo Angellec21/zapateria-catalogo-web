@@ -1,0 +1,21 @@
+{
+  "name": "zapateria-catalogo-web",
+  "version": "0.1.0",
+  "description": "Catálogo web de una zapatería de Santa Cruz con filtros por talla y categoría y pedidos por WhatsApp",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "author": "Angel Emanuel Lecaro Quispe",
+  "scripts": {
+    "start": "npx --yes serve@14.2.4 -l 8080 .",
+    "test": "node --test",
+    "lint:html": "html-validate index.html",
+    "check": "npm run lint:html && npm test"
+  },
+  "devDependencies": {
+    "html-validate": "11.21.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

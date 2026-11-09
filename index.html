@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Calzados Piraí · Catálogo de zapatos en Santa Cruz</title>
+    <meta name="description" content="Catálogo de Calzados Piraí: zapatillas, zapatos formales, botas, sandalias y calzado escolar en Santa Cruz de la Sierra. Precios en Bs y pedidos por WhatsApp.">
+    <meta name="theme-color" content="#c8553d">
+    <link rel="icon" href="img/zapatilla.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/estilos.css">
+    <script type="module" src="js/app.js"></script>
+  </head>
+  <body>
+    <a class="saltar" href="#catalogo">Saltar al catálogo</a>
+
+    <header class="cabecera">
+      <div class="contenedor cabecera__fila">
+        <a class="marca" href="./" aria-label="Calzados Piraí, inicio">
+          <img src="img/zapatilla.svg" alt="" width="40" height="27">
+          <span>Calzados Piraí</span>
+        </a>
+        <p class="cabecera__dato">Envíos en Santa Cruz · Pagos con QR</p>
+      </div>
+    </header>
+
+    <main id="catalogo" class="contenedor">
+      <section class="portada" aria-labelledby="titulo-portada">
+        <h1 id="titulo-portada">Calzado para toda la familia, al precio justo</h1>
+        <p>Elige tu modelo y tu talla, y haz tu pedido por WhatsApp. Te confirmamos el stock al instante.</p>
+      </section>
+
+      <section aria-labelledby="titulo-productos">
+        <div class="resultados">
+          <h2 id="titulo-productos">Productos</h2>
+          <p id="contador" class="resultados__contador" aria-live="polite"></p>
+        </div>
+        <ul id="grilla" class="grilla"></ul>
+        <noscript><p class="aviso">Activa JavaScript para ver el catálogo.</p></noscript>
+      </section>
+    </main>
+
+    <footer class="pie">
+      <div class="contenedor pie__fila">
+        <p><strong>Calzados Piraí</strong> · <span id="direccion"></span></p>
+        <p id="horario"></p>
+      </div>
+    </footer>
+  </body>
+</html>
